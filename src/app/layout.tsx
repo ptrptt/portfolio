@@ -1,0 +1,54 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "Phattharaphon Tangtaeng | Software Tester & QA Engineer",
+  description:
+    "Portfolio of Phattharaphon Tangtaeng — Software Engineering student specializing in Software Testing, QA, and Quality Assurance. Open to internship opportunities.",
+  keywords: [
+    "Software Tester",
+    "QA Engineer",
+    "Software Testing",
+    "Quality Assurance",
+    "Software Engineering",
+    "Internship",
+    "Phattharaphon Tangtaeng",
+  ],
+  authors: [{ name: "Phattharaphon Tangtaeng" }],
+  creator: "Phattharaphon Tangtaeng",
+  robots: "index, follow",
+  openGraph: {
+    title: "Phattharaphon Tangtaeng | Software Tester & QA Engineer",
+    description:
+      "Portfolio of Phattharaphon Tangtaeng — Software Engineering student specializing in Software Testing and Quality Assurance.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Phattharaphon Tangtaeng | Software Tester",
+    description:
+      "Software Engineering student specializing in QA and Software Testing.",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={`${inter.variable} scroll-smooth`}>
+      <body className="min-h-screen bg-[#F8FAFC] text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900">
+        {children}
+      </body>
+    </html>
+  );
+}
