@@ -23,7 +23,7 @@ export function BackToTop() {
           transition={{ duration: 0.3 }}
           onClick={handleClick}
           aria-label="Back to top"
-          className="fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#2563EB] to-[#60A5FA] text-white shadow-lg shadow-blue-200 hover:shadow-blue-300 hover:scale-110 transition-all duration-200"
+          className="fixed bottom-8 right-8 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-[#2563EB] to-[#60A5FA] text-white shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-blue-500/35 hover:scale-[1.08] active:scale-[0.95] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
         >
           <ArrowUp size={20} />
         </motion.button>
