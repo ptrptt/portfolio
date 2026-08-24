@@ -4,26 +4,26 @@ export function Footer() {
   const year = 2026;
 
   return (
-    <footer className="bg-[#F8FAFC] border-t border-slate-200/80">
+    <footer className="bg-[#F8FAFC] border-t border-slate-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Logo */}
-          <span className="text-lg font-extrabold text-[#2563EB] tracking-tight">
+          <span className="text-lg font-bold text-[#2563EB] tracking-tight">
             PT.
           </span>
 
           {/* Copyright */}
-          <p className="text-sm font-medium text-slate-500 flex items-center gap-1.5">
+          <p className="text-sm text-gray-500 flex items-center gap-1">
             Copyright &copy; {year} Phattharaphon Tangtaeng.{" "}
             <Heart
-              size={14}
-              className="text-rose-500 fill-rose-500"
+              size={13}
+              className="text-rose-400 fill-rose-400"
               aria-hidden="true"
             />
           </p>
 
           {/* Tagline */}
-          <p className="text-xs font-semibold text-slate-400 hidden sm:block">
+          <p className="text-xs text-gray-400 hidden sm:block">
             Software Tester intern
           </p>
         </div>

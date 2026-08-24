@@ -18,135 +18,21 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── Global Background System ───────────────────────────── */
-
 body {
-  background-color: #f0f4ff;
+  background-color: #f8fafc;
   color: #0f172a;
   font-family: var(--font-inter, "Inter", system-ui, sans-serif);
   overflow-x: hidden;
-  position: relative;
 }
 
-/*
-  Fixed full-page background layer — rendered behind all content via z-index.
-  Three visual layers composited together:
-    1. Dot grid   — precise radial dots at 28px pitch (QA / precision feel)
-    2. Line grid  — very faint horizontal + vertical rule lines at 112px
-    3. Base tint  — soft blue-white linear gradient base
-*/
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  /* Base gradient: clean blue-white sweep */
-  background:
-    /* Dot grid — 1px radial dots at 28×28 intervals */
-    radial-gradient(circle, rgba(37, 99, 235, 0.09) 1px, transparent 1px),
-    /* Subtle major grid lines every 112px */
-    linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px),
-    /* Base tonal gradient */
-    linear-gradient(165deg, #e8f0fe 0%, #f0f6ff 30%, #f8fafc 60%, #eef5ff 100%);
-  background-size:
-    28px 28px,
-    112px 112px,
-    112px 112px,
-    100% 100%;
-  pointer-events: none;
-}
-
-/*
-  Second fixed layer — ambient soft glows anchored to corners and center.
-  These give a subtle "technical glow field" effect without being distracting.
-*/
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background:
-    /* Top-left ambient bloom */
-    radial-gradient(ellipse 70% 50% at 0% 0%,   rgba(37, 99, 235, 0.07) 0%, transparent 70%),
-    /* Top-right soft accent */
-    radial-gradient(ellipse 50% 40% at 100% 0%,  rgba(96, 165, 250, 0.06) 0%, transparent 65%),
-    /* Center-bottom warm glow */
-    radial-gradient(ellipse 80% 40% at 50% 100%, rgba(37, 99, 235, 0.05) 0%, transparent 70%),
-    /* Mid-page right accent */
-    radial-gradient(ellipse 40% 50% at 100% 55%, rgba(147, 197, 253, 0.07) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-/* ─── Hero section background (enhanced) ──────────────────── */
-
-/* Existing .bg-grid-pattern used in the Hero section */
+/* Background grid utility */
 .bg-grid-pattern {
-  background-size: 28px 28px, 28px 28px;
-  background-image:
-    /* Prominent dot grid for hero */
-    radial-gradient(circle, rgba(37, 99, 235, 0.1) 1.5px, transparent 1.5px),
-    /* Cross-hair accent lines every 28px */
-    linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-image: 
+    radial-gradient(circle, rgba(37, 99, 235, 0.07) 1px, transparent 1px);
 }
 
-/* ─── Section-level background overrides ──────────────────── */
-
-/*
-  Make alternating white / slate-bg sections slightly translucent
-  so the global body background layers show through at the edges,
-  creating a cohesive depth effect without touching the components.
-*/
-#hero {
-  background-color: rgba(248, 250, 252, 0.40) !important;
-  position: relative;
-  isolation: isolate;
-}
-
-#about,
-#skills,
-#contact {
-  background-color: rgba(255, 255, 255, 0.82) !important;
-  backdrop-filter: blur(0px); /* no blur — just translucency */
-  position: relative;
-  isolation: isolate;
-}
-
-#education,
-#projects {
-  background-color: rgba(248, 250, 252, 0.78) !important;
-  position: relative;
-  isolation: isolate;
-}
-
-/* ─── Subtle diagonal accent overlay for F8FAFC sections ──── */
-
-#education::before,
-#projects::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-image:
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 18px,
-      rgba(37, 99, 235, 0.018) 18px,
-      rgba(37, 99, 235, 0.018) 19px
-    );
-  pointer-events: none;
-}
-
-/* Ensure section content sits above the pseudo-element overlay */
-#education > *,
-#projects > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* ─── Custom scrollbar ─────────────────────────────────────── */
-
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
 }
@@ -164,13 +50,13 @@ body::after {
   background: #94a3b8;
 }
 
-/* ─── Focus & selection ────────────────────────────────────── */
-
+/* Focus ring */
 :focus-visible {
   outline: 2px solid #2563eb;
   outline-offset: 2px;
 }
 
+/* Selection */
 ::selection {
   background: #bfdbfe;
   color: #1e40af;
