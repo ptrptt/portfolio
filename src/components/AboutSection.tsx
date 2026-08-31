@@ -16,26 +16,19 @@ export function AboutSection() {
           <div className="space-y-6 bg-slate-50/70 p-8 rounded-2xl border border-slate-200/70 shadow-xs">
             <div className="space-y-4 text-base leading-relaxed text-gray-600">
               <p className="indent-8">
-                สวัสดีค่ะ ดิฉัน <strong className="font-semibold text-slate-800">นางสาวภัทรพร ตั้งแต่ง</strong>{" "}
-                นักศึกษาชั้นปีที่ 3 สาขาวิศวกรรมซอฟต์แวร์ มีความสนใจอย่างมากในด้าน{" "}
-                <strong className="font-semibold text-slate-800">Software Testing และ Quality Assurance (QA)</strong>{" "}
-                มีความรู้และประสบการณ์ในการออกแบบ <strong className="font-semibold text-slate-800">Test Case</strong>{" "}
-                การวิเคราะห์ความต้องการของระบบ (<strong className="font-semibold text-slate-800">Requirement Analysis</strong>)
-                และการทดสอบการทำงานของระบบ (<strong className="font-semibold text-slate-800">Functional Testing</strong>)
+                สวัสดีค่ะ ดิฉัน นางสาวภัทรพร ตั้งแต่ง นักศึกษาชั้นปีที่ 3 สาขาวิศวกรรมซอฟต์แวร์
+                มีความสนใจอย่างมากในด้าน Software Testing และ Quality Assurance (QA)
+                มีความรู้และประสบการณ์ในการออกแบบ Test Case การวิเคราะห์ความต้องการของระบบ (Requirement Analysis)
+                และการทดสอบการทำงานของระบบ (Functional Testing)
               </p>
               <p className="indent-8">
-                รวมถึงมีพื้นฐานด้าน <strong className="font-semibold text-slate-800">Automated Testing</strong>{" "}
-                โดยเคยฝึกเขียนและรัน Automated Test ด้วย{" "}
-                <strong className="font-semibold text-slate-800">Playwright และ Robot Framework</strong>{" "}
+                รวมถึงมีพื้นฐานด้าน Automated Testing โดยเคยฝึกเขียนและรัน Automated Test ด้วย Playwright และ Robot Framework
                 เพื่อทดสอบการทำงานของ Web Application และตรวจสอบผลลัพธ์ของระบบ ผ่านโครงงานในมหาวิทยาลัย
               </p>
               <p className="indent-8">
                 ดิฉันเป็นคนใส่ใจในรายละเอียด มีความรับผิดชอบ และพร้อมเรียนรู้เทคโนโลยีใหม่ ๆ อยู่เสมอ
-                โดยมีความตั้งใจที่จะพัฒนาทักษะทั้งด้าน{" "}
-                <strong className="font-semibold text-slate-800">Manual Testing และ Automated Testing</strong>{" "}
-                เพื่อเตรียมความพร้อมสำหรับการทำงานด้าน{" "}
-                <strong className="font-semibold text-slate-800">Software Tester / Quality Assurance</strong>{" "}
-                ในสภาพแวดล้อมการทำงานจริง
+                โดยมีความตั้งใจที่จะพัฒนาทักษะทั้งด้าน Manual Testing และ Automated Testing
+                เพื่อเตรียมความพร้อมสำหรับการทำงานด้าน Software Tester / Quality Assurance ในสภาพแวดล้อมการทำงานจริง
               </p>
             </div>
           </div>
