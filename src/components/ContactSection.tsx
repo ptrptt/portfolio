@@ -48,7 +48,7 @@ const contactColors = [
 
 export function ContactSection() {
   return (
-    <Section id="contact" className="bg-white">
+    <Section id="contact" className="bg-white/72 backdrop-blur-[2px] relative">
       <FadeUp>
         <SectionHeader
           title="Contact"

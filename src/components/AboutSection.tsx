@@ -2,17 +2,10 @@
 import Image from "next/image";
 import { Section, SectionHeader } from "@/components/ui/SectionHeader";
 import { FadeUp, SlideIn } from "@/components/ui/Animations";
-import { CheckCircle2 } from "lucide-react";
-
-const highlights = [
-  "QA & Functional Testing",
-  "Test Case Execution",
-  "Defect Tracking & SDLC",
-];
 
 export function AboutSection() {
   return (
-    <Section id="about" className="bg-white border-y border-slate-100 relative">
+    <Section id="about" className="bg-white/72 backdrop-blur-[2px] border-y border-white/70 relative">
       <FadeUp>
         <SectionHeader title="About Me" />
       </FadeUp>
@@ -21,26 +14,29 @@ export function AboutSection() {
         {/* LEFT — Text */}
         <SlideIn direction="left" delay={0.1}>
           <div className="space-y-6 bg-slate-50/70 p-8 rounded-2xl border border-slate-200/70 shadow-xs">
-            <p className="text-gray-600 text-base leading-relaxed">
-              &quot;Third-year Software Engineering student with a strong interest in Software Testing and Quality Assurance.
-              Familiar with designing test cases, analyzing system requirements, and performing functional testing through academic projects.
-              Hands-on experience in test execution and identifying defects
-              to ensure system quality. 
-              Detail-focused and motivated to continuously improve
-              testing skills in a professional environment.&quot;
-            </p>
-
-            {/* Highlight list */}
-            <div className="flex flex-wrap gap-2.5 pt-2">
-              {highlights.map((highlight) => (
-                <div
-                  key={highlight}
-                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-slate-200/80 text-slate-700 text-xs sm:text-sm font-medium shadow-xs"
-                >
-                  <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0" />
-                  <span>{highlight}</span>
-                </div>
-              ))}
+            <div className="space-y-4 text-base leading-relaxed text-gray-600">
+              <p className="indent-8">
+                สวัสดีค่ะ ดิฉัน <strong className="font-semibold text-slate-800">นางสาวภัทรพร ตั้งแต่ง</strong>{" "}
+                นักศึกษาชั้นปีที่ 3 สาขาวิศวกรรมซอฟต์แวร์ มีความสนใจอย่างมากในด้าน{" "}
+                <strong className="font-semibold text-slate-800">Software Testing และ Quality Assurance (QA)</strong>{" "}
+                มีความรู้และประสบการณ์ในการออกแบบ <strong className="font-semibold text-slate-800">Test Case</strong>{" "}
+                การวิเคราะห์ความต้องการของระบบ (<strong className="font-semibold text-slate-800">Requirement Analysis</strong>)
+                และการทดสอบการทำงานของระบบ (<strong className="font-semibold text-slate-800">Functional Testing</strong>) ผ่านโครงงานในมหาวิทยาลัย
+              </p>
+              <p className="indent-8">
+                รวมถึงมีพื้นฐานด้าน <strong className="font-semibold text-slate-800">Automated Testing</strong>{" "}
+                โดยเคยฝึกเขียนและรัน Automated Test ด้วย{" "}
+                <strong className="font-semibold text-slate-800">Playwright และ Robot Framework</strong>{" "}
+                เพื่อทดสอบการทำงานของ Web Application และตรวจสอบผลลัพธ์ของระบบ
+              </p>
+              <p className="indent-8">
+                ดิฉันเป็นคนใส่ใจในรายละเอียด มีความรับผิดชอบ และพร้อมเรียนรู้เทคโนโลยีใหม่ ๆ อยู่เสมอ
+                โดยมีความตั้งใจที่จะพัฒนาทักษะทั้งด้าน{" "}
+                <strong className="font-semibold text-slate-800">Manual Testing และ Automated Testing</strong>{" "}
+                เพื่อเตรียมความพร้อมสำหรับการทำงานด้าน{" "}
+                <strong className="font-semibold text-slate-800">Software Tester / Quality Assurance</strong>{" "}
+                ในสภาพแวดล้อมการทำงานจริง
+              </p>
             </div>
           </div>
         </SlideIn>

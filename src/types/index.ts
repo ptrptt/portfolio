@@ -16,7 +16,8 @@ export interface Project {
   description: string;
   technologies: string[];
   githubUrl: string;
-  demoUrl: string;
+  demoUrl?: string;
+  testCaseUrl?: string;
   gradient: string;
 }
 
@@ -29,6 +30,11 @@ export interface Education {
   period: string;
   current: boolean;
   logo: string;
+  internship?: {
+    organization: string;
+    department: string;
+    description: string;
+  };
 }
 
 export interface ContactItem {

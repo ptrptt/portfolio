@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import BackgroundCircles from "@/components/BackgroundCircles";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -46,8 +47,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-[#F8FAFC] text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900">
-        {children}
+      <body className="min-h-screen bg-[#F8FAFC] text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900 relative">
+        <BackgroundCircles />
+        <div className="relative z-10">
+          {children}
+        </div>
       </body>
     </html>
   );

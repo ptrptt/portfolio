@@ -1,47 +1,31 @@
 "use client";
+
 import Image from "next/image";
-import { Download, Mail } from "lucide-react";
-import { motion } from "framer-motion";
-import { FadeUp, SlideIn, Floating } from "@/components/ui/Animations";
+import { ArrowRight, Download, Mail } from "lucide-react";
+import { FadeUp, SlideIn } from "@/components/ui/Animations";
 import { smoothScrollTo } from "@/lib/utils";
 
 export function HeroSection() {
   return (
     <section
       id="hero"
-      aria-label="Hero section"
-      className="relative min-h-screen flex items-center overflow-hidden bg-[#F8FAFC] bg-grid-pattern pt-16"
+      aria-label="Introduction"
+      className="relative flex min-h-screen items-center overflow-hidden bg-[#F8FAFC]/35 pt-20"
     >
-      {/* Background decorative blobs */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none overflow-hidden"
-      >
-        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-100/60 to-indigo-100/40 opacity-70 blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-sky-100/60 to-blue-100/40 opacity-70 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-blue-100/60 to-indigo-100/40 opacity-70 blur-3xl" />
-      </div>
+      <div aria-hidden="true" className="absolute inset-0 bg-grid-pattern opacity-60" />
+      <div aria-hidden="true" className="absolute left-[12%] top-32 h-28 w-28 rounded-full border border-blue-300/25" />
+      <div aria-hidden="true" className="absolute bottom-24 right-[8%] h-16 w-16 rounded-full bg-blue-200/25 blur-sm" />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* LEFT COLUMN */}
-          <div className="flex flex-col gap-6 order-2 lg:order-1 items-start">
-            {/* Status Badge */}
-            <FadeUp delay={0.1}>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold shadow-xs">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                </span>
-                OPEN TO INTERNSHIP
-              </div>
-            </FadeUp>
-
-            {/* Heading */}
-            <FadeUp delay={0.2}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] tracking-tight">
-                Hello, I&apos;m{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] via-blue-600 to-[#60A5FA] bg-clip-text text-transparent">
+      <div className="relative mx-auto w-full max-w-7xl px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+        <div className="grid items-center gap-16 lg:grid-cols-[1.08fr_.92fr] lg:gap-20">
+          <div className="order-2 flex flex-col items-start lg:order-1">
+            <FadeUp delay={0.12}>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+                Software Engineering Student
+              </p>
+              <h1 className="max-w-3xl text-4xl font-black leading-[1.06] tracking-[-0.04em] text-slate-950 sm:text-5xl lg:text-6xl xl:text-7xl">
+                Hello, I&apos;m
+                <span className="block bg-gradient-to-r from-blue-700 via-blue-600 to-sky-400 bg-clip-text text-transparent">
                   Phattharaphon
                   <br />
                   Tangtaeng
@@ -49,76 +33,65 @@ export function HeroSection() {
               </h1>
             </FadeUp>
 
-            {/* Subtitle */}
-            <FadeUp delay={0.3}>
-              <div className="space-y-1">
-                <p className="text-lg font-semibold text-gray-700">
-                  Software Engineering Student
+            <FadeUp delay={0.2}>
+              <div className="mt-5 space-y-3">
+                <p className="text-base font-semibold text-blue-600 sm:text-lg">
+                  Software Tester Intern
                 </p>
-                <p className="text-base text-[#2563EB] font-medium">
-                   Software Tester Intern
+                <p className="max-w-xl text-base leading-7 text-slate-600">
+                  นักศึกษาวิศวกรรมซอฟต์แวร์ที่มีความสนใจและมุ่งมั่นในด้าน Software Testing และ Quality Assurance (QA)
+                  สนใจการออกแบบ Test Case การทดสอบการทำงานของระบบ (Functional Testing) และการพัฒนาคุณภาพของซอฟต์แวร์ให้ดียิ่งขึ้น
                 </p>
               </div>
             </FadeUp>
 
-            {/* Paragraph */}
-            <FadeUp delay={0.4}>
-              <p className="text-gray-500 text-base leading-relaxed max-w-md">
-                &quot;Software Engineering student passionate about Software Testing and Quality Assurance.
-                 Interested in test case design, functional testing, and improving software quality.&quot;
-              </p>
-            </FadeUp>
-
-            {/* CTA Buttons */}
-            <FadeUp delay={0.5}>
-              <div className="flex flex-wrap gap-3 pt-2">
+            <FadeUp delay={0.36}>
+              <div className="mt-9 flex flex-wrap gap-3">
                 <a
                   href="/resume.pdf"
                   download
                   id="hero-download-cv"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white font-medium text-sm shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-blue-500/35 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+                  className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-700 to-blue-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-blue-500/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                 >
-                  <Download size={16} />
+                  <Download size={17} aria-hidden="true" />
                   Download CV
                 </a>
                 <button
                   id="hero-contact-me"
                   onClick={() => smoothScrollTo("#contact")}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-[#2563EB] text-[#2563EB] font-semibold text-sm bg-white/80 hover:bg-blue-50/80 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+                  className="group inline-flex cursor-pointer items-center gap-2 rounded-full border border-slate-300 bg-white/80 px-6 py-3.5 text-sm font-semibold text-slate-800 shadow-sm backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-300 hover:text-blue-700 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                 >
-                  <Mail size={16} />
+                  <Mail size={17} aria-hidden="true" />
                   Contact Me
+                  <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </button>
               </div>
             </FadeUp>
           </div>
 
-          {/* RIGHT COLUMN — Profile */}
-          <div className="flex justify-center items-center order-1 lg:order-2">
-            <SlideIn direction="right" delay={0.3}>
-              <Floating>
-                <div
-                  className="relative"
-                  aria-label="Profile image"
-                >
-                  {/* Outer glow ring */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#2563EB]/20 to-[#60A5FA]/20 blur-xl scale-105" />
+          <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
+            <SlideIn direction="right" delay={0.15}>
+              <div className="relative mx-auto w-[min(78vw,360px)] sm:w-[380px] lg:w-[410px]">
+                  <div aria-hidden="true" className="absolute -inset-5 rotate-3 rounded-[2.5rem] border border-blue-200/70 bg-gradient-to-br from-blue-100/60 to-white/20" />
+                  <div aria-hidden="true" className="absolute -inset-1 -rotate-3 rounded-[2.25rem] bg-gradient-to-br from-blue-600/20 via-sky-300/10 to-indigo-500/20 blur-xl" />
 
-                  {/* Precision double-framed container */}
-                  <div className="relative w-72 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[440px] rounded-3xl bg-white p-3 border border-slate-200/90 shadow-xl shadow-blue-500/10 flex flex-col items-center justify-center overflow-hidden">
-                    <div className="relative w-full h-full rounded-2xl overflow-hidden bg-slate-100">
-                      <Image
-                        src="/profile.jpg"
-                        alt="Phattharaphon Tangtaeng - Profile"
-                        fill
-                        sizes="(max-width: 640px) 288px, (max-width: 1024px) 320px, 384px"
-                        className="object-cover"
-                        priority
-                      />
+                  <div className="relative aspect-[4/4.7] overflow-hidden rounded-[2rem] border-[6px] border-white bg-slate-100 shadow-2xl shadow-blue-900/15">
+                    <Image
+                      src="/profile.jpg"
+                      alt="Phattharaphon Tangtaeng"
+                      fill
+                      sizes="(max-width: 640px) 78vw, (max-width: 1024px) 380px, 410px"
+                      className="object-cover"
+                      priority
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-slate-950/55 to-transparent" />
+                    <div className="absolute bottom-5 left-5 text-white">
+                      <p className="text-xs font-medium uppercase tracking-[0.18em] text-blue-100">Software Engineering Student</p>
+                      <p className="mt-1 text-lg font-bold">Software Tester Intern</p>
                     </div>
                   </div>
-                </div>
-              </Floating>
+
+              </div>
             </SlideIn>
           </div>
         </div>

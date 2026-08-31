@@ -9,7 +9,7 @@ import { projects } from "@/data";
 
 export function ProjectsSection() {
   return (
-    <Section id="projects" className="bg-[#F8FAFC]">
+    <Section id="projects" className="bg-[#F8FAFC]/40">
       <FadeUp>
         <SectionHeader
           title="Projects"
@@ -94,15 +94,15 @@ export function ProjectsSection() {
                     GitHub
                   </a>
                   <a
-                    href={project.demoUrl}
+                    href={project.testCaseUrl || project.demoUrl || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    id={`project-demo-${project.id}`}
+                    id={`project-testcase-${project.id}`}
                     className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-sm font-medium text-white hover:opacity-90 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
-                    aria-label={`View live demo of ${project.title}`}
+                    aria-label={`View test case of ${project.title}`}
                   >
                     <ExternalLink size={15} aria-hidden="true" />
-                    Live Demo
+                    Test Case
                   </a>
                 </div>
               </div>

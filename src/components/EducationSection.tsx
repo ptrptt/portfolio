@@ -1,14 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { Section, SectionHeader } from "@/components/ui/SectionHeader";
-import { FadeUp, ScaleIn } from "@/components/ui/Animations";
+import { Award, BookOpen, BriefcaseBusiness, Calendar, GraduationCap } from "lucide-react";
 import { education } from "@/data";
-import { BookOpen, Award, Calendar } from "lucide-react";
+import { FadeUp, ScaleIn } from "@/components/ui/Animations";
+import { Section, SectionHeader } from "@/components/ui/SectionHeader";
 
 export function EducationSection() {
   return (
-    <Section id="education" className="bg-[#F8FAFC]">
+    <Section id="education" className="bg-[#F8FAFC]/40">
       <FadeUp>
         <SectionHeader
           title="Education"
@@ -16,116 +16,95 @@ export function EducationSection() {
         />
       </FadeUp>
 
-      <div className="relative">
-        {/* Timeline line */}
-        <div
-          aria-hidden="true"
-          className="absolute left-6 lg:left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-[#2563EB] via-[#60A5FA]/60 to-slate-200 -translate-x-1/2"
-        />
+      <div className="mx-auto max-w-5xl space-y-6">
+        {education.map((edu, index) => (
+          <ScaleIn key={edu.id} delay={index * 0.12}>
+            <article className="group overflow-hidden rounded-3xl border border-slate-200/80 bg-white/90 shadow-sm shadow-slate-200/40 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/10">
+              <div className="h-1.5 bg-gradient-to-r from-blue-700 via-blue-500 to-sky-300" />
 
-        <div className="space-y-12">
-          {education.map((edu, index) => {
-            const isLeft = index % 2 === 0;
+              <div className="p-6 sm:p-8">
+                <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+                  <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-3 shadow-sm">
+                    <Image
+                      src={edu.logo}
+                      alt={edu.institution}
+                      width={80}
+                      height={80}
+                      className="max-h-full w-auto object-contain"
+                    />
+                  </div>
 
-            return (
-              <ScaleIn key={edu.id} delay={index * 0.15}>
-                <div
-                  className={`relative flex flex-col lg:flex-row gap-8 ${
-                    isLeft ? "lg:flex-row" : "lg:flex-row-reverse"
-                  }`}
-                >
-                  {/* Timeline nodes */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute left-6 lg:left-1/2 top-6 -translate-x-1/2 w-5 h-5 rounded-full bg-[#2563EB] border-4 border-white shadow-md shadow-blue-500/30 z-10"
-                  />
-
-                  {/* Spacer */}
-                  <div className="hidden lg:block lg:w-1/2" />
-
-                  {/* Card */}
-                  <div className="ml-14 lg:ml-0 lg:w-1/2 lg:px-8">
-                    <article
-                      className="group relative bg-white rounded-2xl p-6 shadow-xs border border-slate-200/80 hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-200 transition-all duration-300"
-                      aria-label={`${edu.institution} education`}
-                    >
-                      {/* Header */}
-                      <div className="flex items-start gap-4">
-                        {/* Logos */}
-                        <div className="w-14 h-14 rounded-xl bg-slate-50 border border-slate-100 p-2 shrink-0 flex items-center justify-center overflow-hidden">
-                          <Image
-                            src={edu.logo}
-                            alt={edu.institution}
-                            width={56}
-                            height={56}
-                            className="object-contain max-h-full"
-                          />
-                        </div>
-
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 flex-wrap mb-1.5">
-                            {/* Period badge with Calendar icon */}
-                            <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-[#2563EB] border border-blue-100/80">
-                              <Calendar size={12} className="text-[#2563EB] shrink-0" aria-hidden="true" />
-                              {edu.period}
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+                      <div>
+                        <div className="mb-2 flex flex-wrap items-center gap-2">
+                          <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-100">
+                            <GraduationCap size={13} aria-hidden="true" />
+                            Education
+                          </span>
+                          {edu.current && (
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-inset ring-emerald-200">
+                              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                              Current
                             </span>
-
-                            {/* Current status emerald badge */}
-                            {edu.current && (
-                              <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200/70">
-                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
-                                Current
-                              </span>
-                            )}
-                          </div>
-
-                          <h3 className="text-base font-bold text-gray-900 leading-snug group-hover:text-[#2563EB] transition-colors">
-                            {edu.institution}
-                          </h3>
+                          )}
                         </div>
+                        <h3 className="text-xl font-bold leading-snug text-slate-900 transition-colors group-hover:text-blue-700 sm:text-2xl">
+                          {edu.institution}
+                        </h3>
                       </div>
 
-                      {/* Details */}
-                      <div className="mt-4 space-y-2.5 sm:pl-[72px]">
-                        <div className="flex items-start gap-2.5 text-sm text-slate-700">
-                          <BookOpen
-                            size={16}
-                            className="text-[#2563EB] shrink-0 mt-0.5"
-                            aria-hidden="true"
-                          />
-                          <span className="font-medium leading-snug">{edu.degree}</span>
-                        </div>
-
-                        {edu.field && (
-                          <div className="flex items-start gap-2.5 text-sm text-slate-500 pl-6">
-                            <span className="w-1.5 h-1.5 rounded-full bg-blue-300 mt-2 shrink-0" aria-hidden="true" />
-                            <span className="leading-snug">{edu.field}</span>
-                          </div>
-                        )}
-
-                        <div className="pt-1">
-                          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 shadow-xs">
-                            <Award
-                              size={14}
-                              className="text-amber-500 shrink-0"
-                              aria-hidden="true"
-                            />
-                            <span>
-                              GPA:{" "}
-                              <span className="text-[#2563EB] font-bold">
-                                {edu.gpa}
-                              </span>
-                            </span>
-                          </div>
-                        </div>
+                      <div className="flex shrink-0 flex-wrap gap-2">
+                        <span className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-600">
+                          <Calendar size={14} className="text-blue-600" aria-hidden="true" />
+                          {edu.period}
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 rounded-xl border border-amber-200/70 bg-amber-50 px-3 py-2 text-xs font-semibold text-slate-700">
+                          <Award size={14} className="text-amber-500" aria-hidden="true" />
+                          GPA <strong className="text-blue-700">{edu.gpa}</strong>
+                        </span>
                       </div>
-                    </article>
+                    </div>
+
+                    <div className="mt-5 flex items-start gap-3 rounded-2xl bg-slate-50/80 p-4 ring-1 ring-inset ring-slate-100">
+                      <BookOpen size={18} className="mt-0.5 shrink-0 text-blue-600" aria-hidden="true" />
+                      <div>
+                        <p className="font-semibold text-slate-800">{edu.degree}</p>
+                        {edu.field && <p className="mt-1 text-sm text-slate-500">{edu.field}</p>}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </ScaleIn>
-            );
-          })}
-        </div>
+
+                {edu.internship && (
+                  <div className="mt-7 rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50/70 to-sky-50/30 p-4 sm:ml-[104px]">
+                    <div className="space-y-5">
+                      <div className="flex items-start gap-3">
+                        <BriefcaseBusiness
+                          size={18}
+                          className="mt-0.5 shrink-0 text-blue-600"
+                          aria-hidden="true"
+                        />
+                        <div>
+                          <p className="block text-sm font-bold leading-relaxed text-slate-900">
+                            {edu.internship.organization}
+                          </p>
+                          <p className="mt-1 block text-sm font-medium leading-relaxed text-blue-700">
+                            {edu.internship.department}
+                          </p>
+                        </div>
+                      </div>
+
+                      <p className="pl-[30px] text-sm leading-7 text-slate-600">
+                        {edu.internship.description}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </article>
+          </ScaleIn>
+        ))}
       </div>
     </Section>
   );

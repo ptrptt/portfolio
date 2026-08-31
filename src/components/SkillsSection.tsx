@@ -60,7 +60,7 @@ const cardColors = [
 
 export function SkillsSection() {
   return (
-    <Section id="skills" className="bg-white">
+    <Section id="skills" className="bg-white/72 backdrop-blur-[2px]">
       <FadeUp>
         <SectionHeader
           title="Skills"

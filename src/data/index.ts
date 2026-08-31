@@ -1,5 +1,4 @@
 import { NavLink, SkillCategory, Project, Education, ContactItem } from "@/types";
-import Image from "next/image";
 
 export const navLinks: NavLink[] = [
   { label: "About", href: "#about" },
@@ -57,7 +56,7 @@ export const projects: Project[] = [
       "A recipe management web application designed to help users discover, save, and organize their favorite recipes. Features include ingredient search, step-by-step cooking guides, and personalized meal planning.",
     technologies: ["HTML", "CSS", "JavaScript", "MySQL"],
     githubUrl: "https://github.com",
-    demoUrl: "https://example.com",
+    testCaseUrl: "https://example.com", // Project 1: Replace with your Test Case link
     gradient: "from-orange-400 to-rose-500",
   },
   {
@@ -68,7 +67,7 @@ export const projects: Project[] = [
       "A comprehensive software testing project covering test plan creation, test case design, defect reporting, and regression testing for a student management system. Documented full QA lifecycle.",
     technologies: ["Jira", "Postman", "Excel", "Test Planning"],
     githubUrl: "https://github.com",
-    demoUrl: "https://example.com",
+    testCaseUrl: "https://example.com", // Project 2: Replace with your Test Case link
     gradient: "from-blue-400 to-indigo-500",
   },
   {
@@ -79,7 +78,7 @@ export const projects: Project[] = [
       "A point-of-sale system designed for a café environment. Supports order management, menu customization, sales reporting, and inventory tracking to streamline café operations.",
     technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
     githubUrl: "https://github.com",
-    demoUrl: "https://example.com",
+    testCaseUrl: "https://example.com", // Project 3: Replace with your Test Case link
     gradient: "from-emerald-400 to-teal-500",
   },
   {
@@ -90,7 +89,7 @@ export const projects: Project[] = [
       "An educational payment management platform that simplifies tuition fee collection for educational institutions. Includes student registration, fee tracking, receipt generation, and payment history.",
     technologies: ["React", "Node.js", "MySQL", "Tailwind CSS"],
     githubUrl: "https://github.com",
-    demoUrl: "https://example.com",
+    testCaseUrl: "https://example.com", // Project 4: Replace with your Test Case link
     gradient: "from-violet-400 to-purple-500",
   },
 ];
@@ -110,12 +109,18 @@ export const education: Education[] = [
   },
   {
     id: "obac",
-    institution: "Ekawit Business Administration Vocational College (OBAC)",
-    degree: "Computer Business Studies",
+    institution: "วิทยาลัยอาชีวศึกษาเอกวิทย์บริหารธุรกิจ (OBAC)",
+    degree: "สาขาคอมพิวเตอร์ธุรกิจ",
     gpa: "3.66",
     period: "2021 – 2024",
     current: false,
-    logo: "/obaclogo.png"
+    logo: "/obaclogo.png",
+    internship: {
+      organization: "ฝึกงาน สำนักงานเขตลาดกระบัง กรุงเทพมหานคร",
+      department: "ฝ่ายการคลัง งานบัญชีและธุรการ",
+      description:
+        "ปฏิบัติงานด้านบัญชีและเอกสารทางการเงินภายในฝ่ายการคลัง โดยมีหน้าที่บันทึกข้อมูลทางบัญชี จัดเตรียมและตรวจสอบเอกสารทางการเงิน และสนับสนุนงานธุรการภายในฝ่ายการคลัง",
+    },
   },
 ];
 
