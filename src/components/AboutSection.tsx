@@ -21,13 +21,13 @@ export function AboutSection() {
                 <strong className="font-semibold text-slate-800">Software Testing และ Quality Assurance (QA)</strong>{" "}
                 มีความรู้และประสบการณ์ในการออกแบบ <strong className="font-semibold text-slate-800">Test Case</strong>{" "}
                 การวิเคราะห์ความต้องการของระบบ (<strong className="font-semibold text-slate-800">Requirement Analysis</strong>)
-                และการทดสอบการทำงานของระบบ (<strong className="font-semibold text-slate-800">Functional Testing</strong>) ผ่านโครงงานในมหาวิทยาลัย
+                และการทดสอบการทำงานของระบบ (<strong className="font-semibold text-slate-800">Functional Testing</strong>)
               </p>
               <p className="indent-8">
                 รวมถึงมีพื้นฐานด้าน <strong className="font-semibold text-slate-800">Automated Testing</strong>{" "}
                 โดยเคยฝึกเขียนและรัน Automated Test ด้วย{" "}
                 <strong className="font-semibold text-slate-800">Playwright และ Robot Framework</strong>{" "}
-                เพื่อทดสอบการทำงานของ Web Application และตรวจสอบผลลัพธ์ของระบบ
+                เพื่อทดสอบการทำงานของ Web Application และตรวจสอบผลลัพธ์ของระบบ ผ่านโครงงานในมหาวิทยาลัย
               </p>
               <p className="indent-8">
                 ดิฉันเป็นคนใส่ใจในรายละเอียด มีความรับผิดชอบ และพร้อมเรียนรู้เทคโนโลยีใหม่ ๆ อยู่เสมอ
