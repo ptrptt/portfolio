@@ -5,7 +5,7 @@ import { FadeUp, SlideIn } from "@/components/ui/Animations";
 
 export function AboutSection() {
   return (
-    <Section id="about" className="bg-white/72 backdrop-blur-[2px] border-y border-white/70 relative">
+    <Section id="about" className="bg-white/80 border-y border-white/70 relative">
       <FadeUp>
         <SectionHeader title="About Me" />
       </FadeUp>

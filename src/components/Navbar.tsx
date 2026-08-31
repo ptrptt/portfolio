@@ -7,11 +7,12 @@ import { navLinks } from "@/data";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { smoothScrollTo } from "@/lib/utils";
 
+const sectionIds = navLinks.map((link) => link.href.replace("#", ""));
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
   const activeSection = useActiveSection(sectionIds);
 
   useEffect(() => {
