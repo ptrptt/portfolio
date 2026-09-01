@@ -9,7 +9,7 @@ import { projects } from "@/data";
 
 export function ProjectsSection() {
   return (
-    <Section id="projects" className="bg-[#F8FAFC]/40">
+    <Section id="projects" className="bg-[#F3FCFB]/50">
       <FadeUp>
         <SectionHeader
           title="Projects"
@@ -87,7 +87,7 @@ export function ProjectsSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     id={`project-github-${project.id}`}
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:border-slate-300 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-medium text-gray-700 hover:bg-[#F3FCFB] hover:border-[#9AF1E8] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#40E0D0]"
                     aria-label={`View ${project.title} on GitHub`}
                   >
                     <GitBranch size={15} aria-hidden="true" />
@@ -98,7 +98,7 @@ export function ProjectsSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     id={`project-testcase-${project.id}`}
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-sm font-medium text-white hover:opacity-90 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#087F78] to-[#40E0D0] text-sm font-medium text-white hover:opacity-90 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#40E0D0]"
                     aria-label={`View test case of ${project.title}`}
                   >
                     <ExternalLink size={15} aria-hidden="true" />

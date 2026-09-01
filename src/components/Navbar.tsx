@@ -31,7 +31,7 @@ export function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/85 backdrop-blur-md border-b border-slate-200/80 shadow-xs"
+            ? "bg-[#F7FCFB]/88 backdrop-blur-md border-b border-[#D0F0EC] shadow-xs"
             : "bg-transparent"
         }`}
       >
@@ -42,11 +42,11 @@ export function Navbar() {
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center gap-1.5 text-xl font-extrabold text-[#2563EB] tracking-tight focus:outline-none cursor-pointer"
+            className="flex items-center gap-1.5 text-xl font-extrabold text-[#087F78] tracking-tight focus:outline-none cursor-pointer"
             aria-label="Go to top"
           >
             <span>PT.</span>
-            <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#40E0D0] animate-pulse" />
           </button>
 
           {/* Desktop Nav */}
@@ -61,17 +61,17 @@ export function Navbar() {
                 <li key={link.href}>
                   <button
                     onClick={() => handleNavClick(link.href)}
-                    className={`relative px-4 py-1.5 text-sm font-medium rounded-full transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] cursor-pointer ${
+                    className={`relative px-4 py-1.5 text-sm font-medium rounded-full transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#40E0D0] cursor-pointer ${
                       isActive
-                        ? "text-[#2563EB] font-semibold"
-                        : "text-slate-600 hover:text-[#2563EB]"
+                        ? "text-[#087F78] font-semibold"
+                        : "text-slate-600 hover:text-[#087F78]"
                     }`}
                     aria-current={isActive ? "page" : undefined}
                   >
                     {isActive && (
                       <motion.span
                         layoutId="nav-pill"
-                        className="absolute inset-0 rounded-full bg-white shadow-xs border border-blue-100"
+                        className="absolute inset-0 rounded-full bg-white shadow-xs border border-[#C8F3EF]"
                         style={{ zIndex: -1 }}
                         transition={{ type: "spring", duration: 0.5, bounce: 0.2 }}
                       />
@@ -87,7 +87,7 @@ export function Navbar() {
           <a
             href="/resume.pdf"
             download
-            className="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white shadow-sm shadow-blue-500/20 hover:shadow-md hover:shadow-blue-500/30 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+            className="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gradient-to-r from-[#087F78] to-[#40E0D0] text-white shadow-sm shadow-[#40E0D0]/25 hover:shadow-md hover:shadow-[#40E0D0]/35 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#40E0D0]"
             aria-label="Download Resume"
           >
             <Download size={14} />
@@ -96,7 +96,7 @@ export function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2 rounded-lg text-slate-600 hover:text-[#2563EB] hover:bg-blue-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] cursor-pointer"
+            className="md:hidden p-2 rounded-lg text-slate-600 hover:text-[#087F78] hover:bg-[#E8FBF9] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#40E0D0] cursor-pointer"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -115,7 +115,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-16 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-lg md:hidden"
+            className="fixed top-16 left-0 right-0 z-40 bg-[#F7FCFB]/95 backdrop-blur-xl border-b border-[#D0F0EC] shadow-lg md:hidden"
           >
             <nav aria-label="Mobile navigation">
               <ul className="flex flex-col px-4 py-4 gap-1" role="list">
@@ -123,7 +123,7 @@ export function Navbar() {
                   <li key={link.href}>
                     <button
                       onClick={() => handleNavClick(link.href)}
-                      className="w-full text-left px-4 py-3 text-sm font-medium text-slate-700 hover:text-[#2563EB] hover:bg-blue-50 rounded-xl transition-colors cursor-pointer"
+                      className="w-full text-left px-4 py-3 text-sm font-medium text-slate-700 hover:text-[#087F78] hover:bg-[#E8FBF9] rounded-xl transition-colors cursor-pointer"
                     >
                       {link.label}
                     </button>
@@ -133,7 +133,7 @@ export function Navbar() {
                   <a
                     href="/resume.pdf"
                     download
-                    className="flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium rounded-xl bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white shadow-sm shadow-blue-500/20"
+                    className="flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium rounded-xl bg-gradient-to-r from-[#087F78] to-[#40E0D0] text-white shadow-sm shadow-[#40E0D0]/25"
                     onClick={() => setMobileOpen(false)}
                   >
                     <Download size={14} />

@@ -22,18 +22,18 @@ const iconMap: Record<string, LucideIcon> = {
 
 const cardColors = [
   {
-    bg: "from-blue-50 to-indigo-50",
-    border: "border-blue-100",
-    icon: "bg-blue-100 text-[#2563EB]",
-    pill: "bg-blue-50 text-[#2563EB] border-blue-100",
-    accent: "from-[#2563EB] to-[#60A5FA]",
+    bg: "from-[#E8FBF9] to-[#DDF9F6]",
+    border: "border-[#C8F3EF]",
+    icon: "bg-[#C8F3EF] text-[#087F78]",
+    pill: "bg-[#F3FCFB] text-[#087F78] border-[#B8EEE9]",
+    accent: "from-[#087F78] to-[#40E0D0]",
   },
   {
-    bg: "from-violet-50 to-purple-50",
-    border: "border-violet-100",
-    icon: "bg-violet-100 text-violet-600",
-    pill: "bg-violet-50 text-violet-600 border-violet-100",
-    accent: "from-violet-500 to-purple-500",
+    bg: "from-[#F1FCFB] to-[#E4FAF8]",
+    border: "border-[#D5F5F2]",
+    icon: "bg-[#D5F5F2] text-[#087F78]",
+    pill: "bg-[#F7FDFC] text-[#087F78] border-[#C8F3EF]",
+    accent: "from-[#0A9990] to-[#7EECE2]",
   },
   {
     bg: "from-emerald-50 to-teal-50",

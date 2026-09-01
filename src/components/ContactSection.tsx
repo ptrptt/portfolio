@@ -21,10 +21,10 @@ const iconMap: Record<string, LucideIcon> = {
 
 const contactColors = [
   {
-    bg: "from-blue-50 to-indigo-50",
-    border: "border-blue-100",
-    icon: "bg-blue-100 text-[#2563EB]",
-    hover: "hover:border-blue-200 hover:shadow-blue-100",
+    bg: "from-[#E8FBF9] to-[#DDF9F6]",
+    border: "border-[#C8F3EF]",
+    icon: "bg-[#C8F3EF] text-[#087F78]",
+    hover: "hover:border-[#9AF1E8] hover:shadow-[#C8F3EF]",
   },
   {
     bg: "from-gray-50 to-slate-50",
@@ -33,10 +33,10 @@ const contactColors = [
     hover: "hover:border-slate-200 hover:shadow-slate-100",
   },
   {
-    bg: "from-sky-50 to-cyan-50",
-    border: "border-sky-100",
-    icon: "bg-sky-100 text-sky-600",
-    hover: "hover:border-sky-200 hover:shadow-sky-100",
+    bg: "from-[#F1FCFB] to-[#E4FAF8]",
+    border: "border-[#D5F5F2]",
+    icon: "bg-[#D5F5F2] text-[#087F78]",
+    hover: "hover:border-[#9AF1E8] hover:shadow-[#D5F5F2]",
   },
   {
     bg: "from-emerald-50 to-teal-50",
@@ -73,7 +73,7 @@ export function ContactSection() {
                     : undefined
                 }
                 id={`contact-${item.id}`}
-                className={`group flex items-center gap-4 p-5 rounded-2xl bg-gradient-to-br ${color.bg} border ${color.border} ${color.hover} hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]`}
+                className={`group flex items-center gap-4 p-5 rounded-2xl bg-gradient-to-br ${color.bg} border ${color.border} ${color.hover} hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#40E0D0]`}
                 aria-label={`Contact via ${item.label}: ${item.value}`}
               >
                 <div
@@ -86,7 +86,7 @@ export function ContactSection() {
                   <p className="text-xs font-medium text-gray-400 mb-0.5">
                     {item.label}
                   </p>
-                  <p className="text-sm font-semibold text-gray-800 truncate group-hover:text-[#2563EB] transition-colors duration-200">
+                  <p className="text-sm font-semibold text-gray-800 truncate group-hover:text-[#087F78] transition-colors duration-200">
                     {item.value}
                   </p>
                 </div>
@@ -102,7 +102,7 @@ export function ContactSection() {
           <a
             href="mailto:tphattharaphon@gmail.com"
             id="contact-send-message"
-            className="group inline-flex items-center gap-3 px-10 py-4 rounded-2xl bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white font-semibold text-base shadow-lg shadow-blue-200 hover:shadow-xl hover:shadow-blue-300 hover:scale-105 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+            className="group inline-flex items-center gap-3 px-10 py-4 rounded-2xl bg-gradient-to-r from-[#087F78] to-[#40E0D0] text-white font-semibold text-base shadow-lg shadow-[#40E0D0]/25 hover:shadow-xl hover:shadow-[#40E0D0]/40 hover:scale-105 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#40E0D0]"
             aria-label="Send me a message via email"
           >
             <Send
@@ -120,7 +120,7 @@ export function ContactSection() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 overflow-hidden -z-10"
       >
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-t from-blue-50/60 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-t from-[#D6F9F5]/70 to-transparent rounded-full blur-3xl" />
       </div>
     </Section>
   );

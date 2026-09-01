@@ -68,7 +68,7 @@ export const projects: Project[] = [
     technologies: ["Jira", "Postman", "Excel", "Test Planning"],
     githubUrl: "https://github.com",
     testCaseUrl: "https://example.com", // Project 2: Replace with your Test Case link
-    gradient: "from-blue-400 to-indigo-500",
+    gradient: "from-[#40E0D0] to-[#087F78]",
   },
   {
     id: "pos-mormilk",
