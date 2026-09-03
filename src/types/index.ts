@@ -11,9 +11,11 @@ export interface SkillCategory {
 
 export interface Project {
   id: string;
+  category: string;
   title: string;
   subtitle: string;
   description: string;
+  highlights: string[];
   technologies: string[];
   githubUrl: string;
   demoUrl?: string;

@@ -1,10 +1,9 @@
 "use client";
 
-import { GitBranch, ExternalLink, ImageIcon } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Section, SectionHeader } from "@/components/ui/SectionHeader";
 import { FadeUp, ScaleIn } from "@/components/ui/Animations";
-import { TechBadge } from "@/components/ui/SectionHeader";
 import { projects } from "@/data";
 
 export function ProjectsSection() {
@@ -17,92 +16,58 @@ export function ProjectsSection() {
         />
       </FadeUp>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
         {projects.map((project, index) => (
           <ScaleIn key={project.id} delay={index * 0.1}>
             <motion.article
               whileHover={{ y: -6 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="group relative bg-white rounded-2xl border border-slate-100 shadow-sm shadow-slate-100 overflow-hidden hover:shadow-xl hover:shadow-slate-200/50 hover:border-slate-200 transition-shadow duration-300"
+              className="group relative bg-white rounded-[1.75rem] border border-sky-100/80 p-6 sm:p-8 shadow-sm shadow-sky-100/50 overflow-hidden hover:shadow-xl hover:shadow-sky-100 hover:border-sky-200 transition-shadow duration-300"
               aria-label={`${project.title} project`}
             >
-              {/* Image Placeholder */}
-              <div
-                className={`relative h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden`}
-                aria-label={`${project.title} project image placeholder`}
-              >
-                {/* Decorative pattern */}
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 opacity-20"
-                >
-                  <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-white translate-x-12 -translate-y-12" />
-                  <div className="absolute bottom-0 left-0 w-24 h-24 rounded-full bg-white -translate-x-8 translate-y-8" />
-                </div>
+              <div className="relative">
+                <span className="inline-flex rounded-full bg-sky-50 px-3.5 py-1.5 text-xs font-semibold text-sky-600 mb-6">
+                  {project.category}
+                </span>
 
-                <div className="relative text-center">
-                  <div className="w-14 h-14 rounded-2xl bg-white/20 border border-white/30 flex items-center justify-center mx-auto mb-2 backdrop-blur-sm">
-                    <ImageIcon
-                      size={24}
-                      className="text-white/70"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <p className="text-white/80 text-xs font-medium">
-                    Project Preview
-                  </p>
-                </div>
-
-                {/* Subtitle badge */}
-                <div className="absolute top-4 left-4">
-                  <span className="px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs font-medium">
-                    {project.subtitle}
-                  </span>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#073b83] mb-1">
                   {project.title}
                 </h3>
-                <p className="text-sm text-gray-500 leading-relaxed mb-4">
+                <p className="text-sm sm:text-base font-medium text-sky-500 mb-5">
+                  {project.subtitle}
+                </p>
+                <p className="text-sm sm:text-base text-slate-600 leading-7 mb-6">
                   {project.description}
                 </p>
 
-                {/* Tech badges */}
-                <div
-                  className="flex flex-wrap gap-2 mb-5"
-                  aria-label="Technologies used"
-                >
+                <ul className="space-y-3 rounded-2xl bg-sky-50/90 p-5 sm:p-6 mb-6 text-sm sm:text-base text-slate-600 leading-7">
+                  {project.highlights.map((highlight) => (
+                    <li key={highlight} className="flex gap-3">
+                      <span aria-hidden="true" className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-300" />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-2 mb-7" aria-label="Technologies used">
                   {project.technologies.map((tech) => (
-                    <TechBadge key={tech} label={tech} />
+                    <span key={tech} className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-600 shadow-xs">
+                      {tech}
+                    </span>
                   ))}
                 </div>
 
-                {/* Action buttons */}
-                <div className="flex gap-3">
+                <div className="flex justify-center">
                   <a
-                    href={project.githubUrl}
+                    href={project.testCaseUrl || project.demoUrl || project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    id={`project-github-${project.id}`}
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-medium text-gray-700 hover:bg-[#F3FCFB] hover:border-[#9AF1E8] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#40E0D0]"
-                    aria-label={`View ${project.title} on GitHub`}
+                    id={`project-details-${project.id}`}
+                    className="inline-flex min-w-40 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#087F78] to-[#40E0D0] px-6 py-3 text-sm font-bold text-white shadow-sm shadow-teal-200 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-teal-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#40E0D0] focus-visible:ring-offset-2"
+                    aria-label={`ดูรายละเอียด ${project.title}`}
                   >
-                    <GitBranch size={15} aria-hidden="true" />
-                    GitHub
-                  </a>
-                  <a
-                    href={project.testCaseUrl || project.demoUrl || "#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    id={`project-testcase-${project.id}`}
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#087F78] to-[#40E0D0] text-sm font-medium text-white hover:opacity-90 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#40E0D0]"
-                    aria-label={`View test case of ${project.title}`}
-                  >
-                    <ExternalLink size={15} aria-hidden="true" />
-                    Test Case
+                    ดูรายละเอียด
+                    <ArrowUpRight size={17} aria-hidden="true" />
                   </a>
                 </div>
               </div>
