@@ -33,8 +33,9 @@ export function ProjectsSection() {
                   {project.subtitle}
                 </p>
                 {project.status && (
-                  <p className="mb-4 text-sm font-semibold text-amber-700">
-                    สถานะ: {project.status}
+                  <p className="mb-4 inline-flex self-start items-center gap-2.5 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-2 text-sm font-semibold text-emerald-800 shadow-sm shadow-emerald-100/60">
+                    <span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full bg-emerald-500 ring-4 ring-emerald-100 motion-safe:animate-pulse" />
+                    <span>สถานะ: {project.status}</span>
                   </p>
                 )}
                 {project.lineOfficialAccount && (

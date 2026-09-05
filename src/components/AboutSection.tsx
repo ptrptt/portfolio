@@ -37,7 +37,7 @@ export function AboutSection() {
         <SlideIn direction="right" delay={0.2}>
           <div className="flex justify-center lg:justify-end">
             <div
-              className="relative w-full max-w-sm h-80 sm:h-96 lg:h-[420px] rounded-3xl bg-white p-2.5 border border-[#fecaca] shadow-xl shadow-[#dc2626]/12 overflow-hidden"
+              className="relative w-full max-w-sm h-80 sm:h-96 lg:h-[420px] rounded-3xl bg-white p-2.5 border border-[#D0F0EC] shadow-xl shadow-[#40E0D0]/12 overflow-hidden"
               aria-label="About profile image"
             >
               <div className="relative w-full h-full rounded-2xl overflow-hidden bg-slate-100">
