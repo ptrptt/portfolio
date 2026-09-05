@@ -21,10 +21,10 @@ const iconMap: Record<string, LucideIcon> = {
 
 const contactColors = [
   {
-    bg: "from-[#E8FBF9] to-[#DDF9F6]",
-    border: "border-[#C8F3EF]",
-    icon: "bg-[#C8F3EF] text-[#087F78]",
-    hover: "hover:border-[#9AF1E8] hover:shadow-[#C8F3EF]",
+    bg: "from-red-50 to-red-100",
+    border: "border-red-200",
+    icon: "bg-red-200 text-red-700",
+    hover: "hover:border-red-300 hover:shadow-red-100",
   },
   {
     bg: "from-gray-50 to-slate-50",
@@ -33,16 +33,16 @@ const contactColors = [
     hover: "hover:border-slate-200 hover:shadow-slate-100",
   },
   {
-    bg: "from-[#F1FCFB] to-[#E4FAF8]",
-    border: "border-[#D5F5F2]",
-    icon: "bg-[#D5F5F2] text-[#087F78]",
-    hover: "hover:border-[#9AF1E8] hover:shadow-[#D5F5F2]",
+    bg: "from-[#fff5f5] to-[#fee2e2]",
+    border: "border-[#fecaca]",
+    icon: "bg-[#fecaca] text-[#991b1b]",
+    hover: "hover:border-[#fca5a5] hover:shadow-[#fecaca]",
   },
   {
-    bg: "from-emerald-50 to-teal-50",
-    border: "border-emerald-100",
-    icon: "bg-emerald-100 text-emerald-600",
-    hover: "hover:border-emerald-200 hover:shadow-emerald-100",
+    bg: "from-red-50 to-red-50",
+    border: "border-red-100",
+    icon: "bg-red-100 text-red-600",
+    hover: "hover:border-red-200 hover:shadow-red-100",
   },
 ];
 
@@ -73,7 +73,7 @@ export function ContactSection() {
                     : undefined
                 }
                 id={`contact-${item.id}`}
-                className={`group flex items-center gap-4 p-5 rounded-2xl bg-gradient-to-br ${color.bg} border ${color.border} ${color.hover} hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#40E0D0]`}
+                className={`group flex items-center gap-4 p-5 rounded-2xl bg-gradient-to-br ${color.bg} border ${color.border} ${color.hover} hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#dc2626]`}
                 aria-label={`Contact via ${item.label}: ${item.value}`}
               >
                 <div
@@ -86,7 +86,7 @@ export function ContactSection() {
                   <p className="text-xs font-medium text-gray-400 mb-0.5">
                     {item.label}
                   </p>
-                  <p className="text-sm font-semibold text-gray-800 truncate group-hover:text-[#087F78] transition-colors duration-200">
+                  <p className={`text-sm font-semibold text-gray-800 truncate ${item.id === "email" ? "group-hover:text-red-700" : "group-hover:text-[#991b1b]"} transition-colors duration-200`}>
                     {item.value}
                   </p>
                 </div>
@@ -100,9 +100,11 @@ export function ContactSection() {
       <FadeUp delay={0.4}>
         <div className="flex justify-center">
           <a
-            href="mailto:tphattharaphon@gmail.com"
+            href={contactItems.find((item) => item.id === "email")?.href}
+            target="_blank"
+            rel="noopener noreferrer"
             id="contact-send-message"
-            className="group inline-flex items-center gap-3 px-10 py-4 rounded-2xl bg-gradient-to-r from-[#087F78] to-[#40E0D0] text-white font-semibold text-base shadow-lg shadow-[#40E0D0]/25 hover:shadow-xl hover:shadow-[#40E0D0]/40 hover:scale-105 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#40E0D0]"
+            className="group inline-flex items-center gap-3 px-10 py-4 rounded-2xl bg-gradient-to-r from-red-700 to-red-600 text-white font-semibold text-base shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 hover:scale-105 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
             aria-label="Send me a message via email"
           >
             <Send
@@ -120,7 +122,7 @@ export function ContactSection() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 overflow-hidden -z-10"
       >
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-t from-[#D6F9F5]/70 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-t from-[#fee2e2]/70 to-transparent rounded-full blur-3xl" />
       </div>
     </Section>
   );

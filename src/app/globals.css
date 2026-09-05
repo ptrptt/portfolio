@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #40e0d0;
-  --color-primary-dark: #087f78;
-  --color-secondary: #7eece2;
-  --color-bg: #f3fcfb;
+  --color-primary: #dc2626;
+  --color-primary-dark: #991b1b;
+  --color-secondary: #fca5a5;
+  --color-bg: #fff7f7;
 }
 
 @theme inline {
@@ -30,7 +30,7 @@ body {
 .bg-grid-pattern {
   background-size: 24px 24px;
   background-image: 
-    radial-gradient(circle, rgb(64 224 208 / 0.14) 1px, transparent 1px);
+    radial-gradient(circle, rgb(220 38 38 / 0.14) 1px, transparent 1px);
 }
 
 /* Custom scrollbar */
@@ -53,36 +53,36 @@ body {
 
 /* Focus ring */
 :focus-visible {
-  outline: 2px solid #40e0d0;
+  outline: 2px solid #dc2626;
   outline-offset: 2px;
 }
 
 /* Selection */
 ::selection {
-  background: #bff7f1;
-  color: #075e59;
+  background: #fecaca;
+  color: #7f1d1d;
 }
 
 /* Soft ambient artwork behind the page content. */
 .background-art { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; isolation: isolate; contain: strict; }
-.background-art__wash { position: absolute; inset: 0; background: radial-gradient(circle at 8% 12%, rgb(191 247 241 / .85), transparent 28%), radial-gradient(circle at 92% 38%, rgb(220 250 247 / .8), transparent 25%), radial-gradient(circle at 42% 92%, rgb(203 246 241 / .72), transparent 30%); }
-.background-art__dots { position: absolute; inset: 0; opacity: .42; background-image: radial-gradient(circle, rgb(64 224 208 / .34) 1px, transparent 1.5px); background-size: 32px 32px; mask-image: linear-gradient(to bottom, black, transparent 35%, transparent 65%, black); }
+.background-art__wash { position: absolute; inset: 0; background: radial-gradient(circle at 8% 12%, rgb(254 202 202 / .85), transparent 28%), radial-gradient(circle at 92% 38%, rgb(254 226 226 / .8), transparent 25%), radial-gradient(circle at 42% 92%, rgb(254 205 211 / .72), transparent 30%); }
+.background-art__dots { position: absolute; inset: 0; opacity: .42; background-image: radial-gradient(circle, rgb(220 38 38 / .34) 1px, transparent 1.5px); background-size: 32px 32px; mask-image: linear-gradient(to bottom, black, transparent 35%, transparent 65%, black); }
 .background-circle, .background-orbit, .background-spark { position: absolute; display: block; border-radius: 9999px; will-change: transform; }
-.background-circle { box-shadow: inset 0 0 0 1px rgb(255 255 255 / .45), 0 24px 70px rgb(8 127 120 / .14); animation: background-drift 18s ease-in-out infinite alternate; }
-.background-circle--blue { background: linear-gradient(145deg, rgb(191 247 241 / .62), rgb(64 224 208 / .12)); }
-.background-circle--cyan { background: linear-gradient(145deg, rgb(220 250 247 / .62), rgb(126 236 226 / .12)); }
-.background-circle--indigo { background: linear-gradient(145deg, rgb(203 246 241 / .56), rgb(8 127 120 / .09)); }
+.background-circle { box-shadow: inset 0 0 0 1px rgb(255 255 255 / .45), 0 24px 70px rgb(153 27 27 / .14); animation: background-drift 18s ease-in-out infinite alternate; }
+.background-circle--blue { background: linear-gradient(145deg, rgb(254 202 202 / .62), rgb(220 38 38 / .12)); }
+.background-circle--cyan { background: linear-gradient(145deg, rgb(254 226 226 / .62), rgb(252 165 165 / .12)); }
+.background-circle--indigo { background: linear-gradient(145deg, rgb(254 205 211 / .56), rgb(153 27 27 / .09)); }
 .background-circle--one { width: 32rem; height: 32rem; top: -13rem; left: -10rem; }
 .background-circle--two { width: 20rem; height: 20rem; top: 15%; right: -8rem; animation-delay: -5s; }
 .background-circle--three { width: 11rem; height: 11rem; top: 42%; left: 7%; animation-delay: -10s; }
 .background-circle--four { width: 26rem; height: 26rem; bottom: -10rem; right: 5%; animation-delay: -7s; }
 .background-circle--five { width: 8rem; height: 8rem; bottom: 18%; left: 35%; animation-delay: -13s; }
 .background-circle--six { width: 5rem; height: 5rem; top: 22%; left: 47%; animation-delay: -3s; }
-.background-orbit { border: 1px solid rgb(64 224 208 / .3); animation: background-drift-reverse 22s ease-in-out infinite alternate; }
-.background-orbit::after { content: ""; position: absolute; width: .7rem; height: .7rem; top: 12%; right: 12%; border-radius: inherit; background: rgb(64 224 208 / .76); box-shadow: 0 0 20px rgb(64 224 208 / .52); }
+.background-orbit { border: 1px solid rgb(220 38 38 / .3); animation: background-drift-reverse 22s ease-in-out infinite alternate; }
+.background-orbit::after { content: ""; position: absolute; width: .7rem; height: .7rem; top: 12%; right: 12%; border-radius: inherit; background: rgb(220 38 38 / .76); box-shadow: 0 0 20px rgb(220 38 38 / .52); }
 .background-orbit--one { width: 18rem; height: 18rem; top: 62%; left: -6rem; }
 .background-orbit--two { width: 12rem; height: 12rem; top: 6%; right: 18%; animation-delay: -8s; }
-.background-spark { width: .5rem; height: .5rem; background: rgb(64 224 208 / .72); box-shadow: 0 0 18px rgb(64 224 208 / .58); animation: background-pulse 4s ease-in-out infinite; }
+.background-spark { width: .5rem; height: .5rem; background: rgb(220 38 38 / .72); box-shadow: 0 0 18px rgb(220 38 38 / .58); animation: background-pulse 4s ease-in-out infinite; }
 .background-spark--one { top: 30%; left: 18%; }
 .background-spark--two { top: 54%; right: 22%; animation-delay: -1.5s; }
 .background-spark--three { bottom: 12%; left: 12%; animation-delay: -3s; }

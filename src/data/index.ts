@@ -85,7 +85,7 @@ export const projects: Project[] = [
     ],
     technologies: ["Playwright", "k6", "Figma", "GitHub", "Agile/Scrum"],
     githubUrl: "https://github.com/BunyawatCharnwechsart/Nutri-Journey.git",
-    gradient: "from-[#40E0D0] to-[#087F78]",
+    gradient: "from-[#dc2626] to-[#991b1b]",
   },
   {
     id: "software-testing-mini",
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com",
     testCaseUrl:
       "https://docs.google.com/spreadsheets/d/1i7FceKrSK3k6qXVGE4AUoRTWCJsk2E7dSZvi2tQER5g/edit?usp=sharing",
-    gradient: "from-[#40E0D0] to-[#087F78]",
+    gradient: "from-[#dc2626] to-[#991b1b]",
   },
   {
     id: "e2e-practice-software-testing",
@@ -218,8 +218,8 @@ export const contactItems: ContactItem[] = [
   {
     id: "email",
     label: "Email",
-    value: "phattharaphon@example.com",
-    href: "mailto:phattharaphon@example.com",
+    value: "tphattharaphon@gmail.com",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=tphattharaphon%40gmail.com",
     icon: "Mail",
   },
   {

@@ -17,7 +17,7 @@ export function SectionHeader({
   return (
     <div className={cn("text-center mb-16", className)}>
       <h2 className="text-4xl font-bold text-gray-900 mb-4">{title}</h2>
-      <div className="mx-auto h-1 w-16 rounded-full bg-gradient-to-r from-[#087F78] to-[#40E0D0]" />
+      <div className="mx-auto h-1 w-16 rounded-full bg-gradient-to-r from-[#991b1b] to-[#dc2626]" />
       {subtitle && (
         <p className="mt-4 text-gray-500 text-lg max-w-xl mx-auto">
           {subtitle}
@@ -53,7 +53,7 @@ export function Badge({ children, className }: BadgeProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-[#E8FBF9] text-[#087F78] border border-[#C8F3EF]",
+        "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-[#fef2f2] text-[#991b1b] border border-[#fecaca]",
         className
       )}
     >

@@ -4,11 +4,11 @@ export function Footer() {
   const year = 2026;
 
   return (
-    <footer className="bg-[#F3FCFB]/90 border-t border-white/70">
+    <footer className="bg-[#fff7f7]/90 border-t border-white/70">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Logo */}
-          <span className="text-lg font-bold text-[#087F78] tracking-tight">
+          <span className="text-lg font-bold text-[#991b1b] tracking-tight">
             PT.
           </span>
 
