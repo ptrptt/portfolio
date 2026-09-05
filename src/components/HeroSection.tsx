@@ -48,7 +48,7 @@ export function HeroSection() {
             <FadeUp delay={0.36}>
               <div className="mt-9 flex flex-wrap gap-3">
                 <a
-                  href="/resume.pdf"
+                  href="/CVphattharaphon.pdf"
                   download
                   id="hero-download-cv"
                   className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#087F78] to-[#40E0D0] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#40E0D0]/25 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#40E0D0]/35 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#40E0D0]"

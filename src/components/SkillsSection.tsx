@@ -2,6 +2,7 @@
 
 import {
   TestTube,
+  Bot,
   Wrench,
   Code2,
   BookOpen,
@@ -14,6 +15,7 @@ import { skillCategories } from "@/data";
 
 const iconMap: Record<string, LucideIcon> = {
   TestTube,
+  Bot,
   Wrench,
   Code2,
   BookOpen,
@@ -22,39 +24,46 @@ const iconMap: Record<string, LucideIcon> = {
 
 const cardColors = [
   {
-    bg: "from-[#E8FBF9] to-[#DDF9F6]",
-    border: "border-[#C8F3EF]",
-    icon: "bg-[#C8F3EF] text-[#087F78]",
-    pill: "bg-[#F3FCFB] text-[#087F78] border-[#B8EEE9]",
-    accent: "from-[#087F78] to-[#40E0D0]",
+    bg: "from-sky-50 to-blue-100",
+    border: "border-blue-200",
+    icon: "bg-blue-200 text-blue-800",
+    pill: "bg-blue-50 text-blue-800 border-blue-200",
+    accent: "from-sky-500 to-blue-600",
   },
   {
-    bg: "from-[#F1FCFB] to-[#E4FAF8]",
-    border: "border-[#D5F5F2]",
-    icon: "bg-[#D5F5F2] text-[#087F78]",
-    pill: "bg-[#F7FDFC] text-[#087F78] border-[#C8F3EF]",
-    accent: "from-[#0A9990] to-[#7EECE2]",
+    bg: "from-violet-50 to-purple-100",
+    border: "border-purple-200",
+    icon: "bg-purple-200 text-purple-800",
+    pill: "bg-purple-50 text-purple-800 border-purple-200",
+    accent: "from-violet-500 to-purple-600",
   },
   {
-    bg: "from-emerald-50 to-teal-50",
-    border: "border-emerald-100",
-    icon: "bg-emerald-100 text-emerald-600",
-    pill: "bg-emerald-50 text-emerald-700 border-emerald-100",
-    accent: "from-emerald-500 to-teal-500",
+    bg: "from-emerald-50 to-green-100",
+    border: "border-green-200",
+    icon: "bg-green-200 text-green-800",
+    pill: "bg-green-50 text-green-800 border-green-200",
+    accent: "from-emerald-500 to-green-600",
   },
   {
-    bg: "from-amber-50 to-orange-50",
-    border: "border-amber-100",
-    icon: "bg-amber-100 text-amber-600",
-    pill: "bg-amber-50 text-amber-700 border-amber-100",
-    accent: "from-amber-500 to-orange-500",
+    bg: "from-amber-50 to-orange-100",
+    border: "border-orange-200",
+    icon: "bg-orange-200 text-orange-800",
+    pill: "bg-orange-50 text-orange-800 border-orange-200",
+    accent: "from-amber-500 to-orange-600",
   },
   {
-    bg: "from-rose-50 to-pink-50",
-    border: "border-rose-100",
-    icon: "bg-rose-100 text-rose-600",
-    pill: "bg-rose-50 text-rose-700 border-rose-100",
-    accent: "from-rose-500 to-pink-500",
+    bg: "from-cyan-50 to-teal-100",
+    border: "border-teal-200",
+    icon: "bg-teal-200 text-teal-800",
+    pill: "bg-teal-50 text-teal-800 border-teal-200",
+    accent: "from-cyan-500 to-teal-600",
+  },
+  {
+    bg: "from-rose-50 to-pink-100",
+    border: "border-pink-200",
+    icon: "bg-pink-200 text-pink-800",
+    pill: "bg-pink-50 text-pink-800 border-pink-200",
+    accent: "from-rose-500 to-pink-600",
   },
 ];
 

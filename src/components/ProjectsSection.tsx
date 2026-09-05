@@ -16,17 +16,17 @@ export function ProjectsSection() {
         />
       </FadeUp>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
         {projects.map((project, index) => (
-          <ScaleIn key={project.id} delay={index * 0.1}>
+          <ScaleIn key={project.id} delay={index * 0.1} className="h-full min-w-0">
             <motion.article
               whileHover={{ y: -6 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="group relative bg-white rounded-[1.75rem] border border-sky-100/80 p-6 sm:p-8 shadow-sm shadow-sky-100/50 overflow-hidden hover:shadow-xl hover:shadow-sky-100 hover:border-sky-200 transition-shadow duration-300"
+              className="group relative h-full flex flex-col bg-white rounded-[1.75rem] border border-sky-100/80 p-6 sm:p-8 shadow-sm shadow-sky-100/50 overflow-hidden hover:shadow-xl hover:shadow-sky-100 hover:border-sky-200 transition-shadow duration-300"
               aria-label={`${project.title} project`}
             >
-              <div className="relative">
-                <span className="inline-flex rounded-full bg-sky-50 px-3.5 py-1.5 text-xs font-semibold text-sky-600 mb-6">
+              <div className="relative flex flex-1 flex-col min-w-0">
+                <span className="inline-flex self-start rounded-full bg-sky-50 px-3.5 py-1.5 text-xs font-semibold text-sky-600 mb-6">
                   {project.category}
                 </span>
 
@@ -36,9 +36,25 @@ export function ProjectsSection() {
                 <p className="text-sm sm:text-base font-medium text-sky-500 mb-5">
                   {project.subtitle}
                 </p>
+                {project.status && (
+                  <p className="mb-4 text-sm font-semibold text-amber-700">
+                    สถานะ: {project.status}
+                  </p>
+                )}
+                {project.lineOfficialAccount && (
+                  <p className="mb-5 text-sm text-slate-600">
+                    <span className="font-semibold">LINE Official Account:</span>{" "}
+                    <span className="font-mono">{project.lineOfficialAccount}</span>
+                  </p>
+                )}
                 <p className="text-sm sm:text-base text-slate-600 leading-7 mb-6">
                   {project.description}
                 </p>
+                {project.role && (
+                  <p className="mb-5 text-sm sm:text-base font-semibold text-[#073b83]">
+                    Role: {project.role}
+                  </p>
+                )}
 
                 <ul className="space-y-3 rounded-2xl bg-sky-50/90 p-5 sm:p-6 mb-6 text-sm sm:text-base text-slate-600 leading-7">
                   {project.highlights.map((highlight) => (
@@ -49,7 +65,8 @@ export function ProjectsSection() {
                   ))}
                 </ul>
 
-                <div className="flex flex-wrap gap-2 mb-7" aria-label="Technologies used">
+                <div className="mt-auto pt-2">
+                <div className="flex flex-wrap gap-2" aria-label="Technologies used">
                   {project.technologies.map((tech) => (
                     <span key={tech} className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-600 shadow-xs">
                       {tech}
@@ -57,7 +74,8 @@ export function ProjectsSection() {
                   ))}
                 </div>
 
-                <div className="flex justify-center">
+                {(project.testCaseUrl || project.demoUrl || project.githubUrl) && (
+                <div className="flex justify-center mt-6 pt-5 border-t border-sky-100">
                   <a
                     href={project.testCaseUrl || project.demoUrl || project.githubUrl}
                     target="_blank"
@@ -69,6 +87,8 @@ export function ProjectsSection() {
                     ดูรายละเอียด
                     <ArrowUpRight size={17} aria-hidden="true" />
                   </a>
+                </div>
+                )}
                 </div>
               </div>
             </motion.article>

@@ -17,18 +17,17 @@ export function AboutSection() {
             <div className="space-y-4 text-base leading-relaxed text-gray-600">
               <p className="indent-8">
                 สวัสดีค่ะ ดิฉัน นางสาวภัทรพร ตั้งแต่ง นักศึกษาชั้นปีที่ 3 สาขาวิศวกรรมซอฟต์แวร์
-                มีความสนใจอย่างมากในด้าน Software Testing และ Quality Assurance (QA)
-                มีความรู้และประสบการณ์ในการออกแบบ Test Case การวิเคราะห์ความต้องการของระบบ (Requirement Analysis)
+                มีความสนใจอย่างมากในด้าน Software Testing  มีความรู้และประสบการณ์ในการออกแบบ Test Case การวิเคราะห์ความต้องการของระบบ (Requirement Analysis)
                 และการทดสอบการทำงานของระบบ (Functional Testing)
               </p>
               <p className="indent-8">
-                รวมถึงมีพื้นฐานด้าน Automated Testing โดยเคยฝึกเขียนและรัน Automated Test ด้วย Playwright และ Robot Framework
+                รวมถึงมีพื้นฐานด้าน Automated Testing โดยเคยฝึกเขียน Automated Test ด้วย Playwright และ Robot Framework
                 เพื่อทดสอบการทำงานของ Web Application และตรวจสอบผลลัพธ์ของระบบ ผ่านโครงงานในมหาวิทยาลัย
               </p>
               <p className="indent-8">
                 ดิฉันเป็นคนใส่ใจในรายละเอียด มีความรับผิดชอบ และพร้อมเรียนรู้เทคโนโลยีใหม่ ๆ อยู่เสมอ
                 โดยมีความตั้งใจที่จะพัฒนาทักษะทั้งด้าน Manual Testing และ Automated Testing
-                เพื่อเตรียมความพร้อมสำหรับการทำงานด้าน Software Tester / Quality Assurance ในสภาพแวดล้อมการทำงานจริง
+                เพื่อเตรียมความพร้อมสำหรับการทำงานด้าน Software Tester ในสภาพแวดล้อมการทำงานจริง
               </p>
             </div>
           </div>

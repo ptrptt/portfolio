@@ -17,7 +17,10 @@ export interface Project {
   description: string;
   highlights: string[];
   technologies: string[];
-  githubUrl: string;
+  status?: string;
+  role?: string;
+  lineOfficialAccount?: string;
+  githubUrl?: string;
   demoUrl?: string;
   testCaseUrl?: string;
   gradient: string;

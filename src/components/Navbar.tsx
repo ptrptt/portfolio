@@ -85,7 +85,7 @@ export function Navbar() {
 
           {/* Resume Button (desktop) */}
           <a
-            href="/resume.pdf"
+            href="/CVphattharaphon.pdf"
             download
             className="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gradient-to-r from-[#087F78] to-[#40E0D0] text-white shadow-sm shadow-[#40E0D0]/25 hover:shadow-md hover:shadow-[#40E0D0]/35 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#40E0D0]"
             aria-label="Download Resume"
@@ -131,7 +131,7 @@ export function Navbar() {
                 ))}
                 <li className="pt-2">
                   <a
-                    href="/resume.pdf"
+                    href="/CVphattharaphon.pdf"
                     download
                     className="flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium rounded-xl bg-gradient-to-r from-[#087F78] to-[#40E0D0] text-white shadow-sm shadow-[#40E0D0]/25"
                     onClick={() => setMobileOpen(false)}
